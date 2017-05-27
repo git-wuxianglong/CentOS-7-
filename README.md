@@ -4,10 +4,10 @@
 	yum update
 
 ## FTP
-	安装vsftpd
+	### 安装vsftpd
 	yum install vsftpd
 
-	设置开机启动vsftpd ftp服务
+	### 设置开机启动vsftpd ftp服务
 	chkconfig vsftpd on
 	
 	添加一个名为ftptest的用户 test_ftp为指定目录
