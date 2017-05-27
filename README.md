@@ -1,7 +1,6 @@
 # CentOS-7-
 
-##更新系统软件
-	yum update
+##更新系统软件  	yum update
 
 ##FTP
 	安装vsftpd
