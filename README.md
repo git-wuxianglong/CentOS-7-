@@ -106,3 +106,7 @@
 
 	解压文件
 	tar -xvf jdk-8u111-linux-x64.tar.gz
+
+## mysql
+	/etc/init.d/mysql restart
+	
