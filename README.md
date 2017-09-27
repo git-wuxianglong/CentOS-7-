@@ -105,7 +105,10 @@
 	rm -rf /home/test
 	
 	移动文件
-	mv file.txt /home/local
+	mv file.txt /home/local 
+	
+	复制文件 
+	cp apache-tomcat-8.5.20.tar.gz /home/javaweb/
 
 	解压文件
 	tar -xvf jdk-8u111-linux-x64.tar.gz 
