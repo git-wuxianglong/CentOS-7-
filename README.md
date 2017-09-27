@@ -110,20 +110,21 @@
 	解压文件
 	tar -xvf jdk-8u111-linux-x64.tar.gz
 
-## mysql
+## mysql 
+	###安装
 	yum install mysql 
 	yum install mysql-server 
 	yum install mysql-devel 
 	
 	安装mysql和mysql-devel都成功，但是安装mysql-server失败 
-		[root@yl-web yl]# yum install mysql-server
-		Loaded plugins: fastestmirror
-		Loading mirror speeds from cached hostfile
-		 * base: mirrors.sina.cn
-		 * extras: mirrors.sina.cn
-		 * updates: mirrors.sina.cn
-		No package mysql-server available.
-		Error: Nothing to do 
+	[root@yl-web yl]# yum install mysql-server
+	Loaded plugins: fastestmirror
+	Loading mirror speeds from cached hostfile
+	 * base: mirrors.sina.cn
+	 * extras: mirrors.sina.cn
+	 * updates: mirrors.sina.cn
+	No package mysql-server available.
+	Error: Nothing to do 
 	
 	有两种解决办法： 
 	方法一：安装mariadb 
@@ -161,6 +162,34 @@
 	查看mysql版本 
 	MariaDB [(none)]> status
 	
-	重启
-	/etc/init.d/mysql restart
+	###配置 
+	vi /etc/my.cnf 
+	最后加上编码配置 
+	default-character-set =utf8 
+	这里的字符编码必须和/usr/share/mysql/charsets/Index.xml中一致。 
+	<charset name="utf8">
+	  <family>Unicode</family>
+	  <description>UTF-8 Unicode</description>
+	  <alias>utf-8</alias>
+	  <collation name="utf8_general_ci"     id="33">
+	   <flag>primary</flag>
+	   <flag>compiled</flag>
+	  </collation>
+	  <collation name="utf8_bin"            id="83">
+	    <flag>binary</flag>
+	    <flag>compiled</flag>
+	  </collation>
+	</charset>
+
+	
+	远程连接设置 
+	把在所有数据库的所有表的所有权限赋值给位于所有IP地址的root用户。
+	MariaDB [(none)]> grant all privileges on *.* to root@'%'identified by 'password';
+	Query OK, 0 rows affected (0.00 sec) 
+	
+	如果是新用户而不是root，则要先新建用户
+	create user 'username'@'%' identified by 'password';
+	
+	
+
 	
