@@ -111,7 +111,7 @@
 	tar -xvf jdk-8u111-linux-x64.tar.gz
 
 ## mysql 
-	### 安装
+	安装
 	yum install mysql 
 	yum install mysql-server 
 	yum install mysql-devel 
@@ -162,7 +162,7 @@
 	查看mysql版本 
 	MariaDB [(none)]> status
 	
-	### 配置 
+	配置 
 	vi /etc/my.cnf 
 	最后加上编码配置 
 	default-character-set =utf8 
