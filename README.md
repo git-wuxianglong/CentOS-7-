@@ -112,7 +112,9 @@
 
 ## mysql
 	查看Mysql安装位置
-	whereis mysql
+	whereis mysql 
+	
+	
 	
 	重启
 	/etc/init.d/mysql restart
