@@ -2,6 +2,9 @@
 
 ## 查看系统版本 
 	cat /etc/redhat-release 
+	
+	显示当前路径
+	pwd
 
 ## 更新系统软件
 	yum update
