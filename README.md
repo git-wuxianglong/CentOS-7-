@@ -1,4 +1,7 @@
-# CentOS-7-
+# CentOS-7 常用操作
+
+## 查看系统版本 
+	cat /etc/redhat-release 
 
 ## 更新系统软件
 	yum update
