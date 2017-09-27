@@ -114,7 +114,10 @@
 	tar -xvf jdk-8u111-linux-x64.tar.gz 
 	
 	搜索文件夹（搜索名为java的文件夹） 
-	find / -name java
+	find / -name java 
+	
+	重命名
+	mv 旧文件名 新文件名
 
 ## mysql 
 	安装
