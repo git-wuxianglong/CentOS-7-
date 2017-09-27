@@ -116,14 +116,14 @@
 	yum install mysql-devel 
 	
 	安装mysql和mysql-devel都成功，但是安装mysql-server失败 
-	[root@yl-web yl]# yum install mysql-server
-	Loaded plugins: fastestmirror
-	Loading mirror speeds from cached hostfile
-	 * base: mirrors.sina.cn
-	 * extras: mirrors.sina.cn
-	 * updates: mirrors.sina.cn
-	No package mysql-server available.
-	Error: Nothing to do 
+		[root@yl-web yl]# yum install mysql-server
+		Loaded plugins: fastestmirror
+		Loading mirror speeds from cached hostfile
+		 * base: mirrors.sina.cn
+		 * extras: mirrors.sina.cn
+		 * updates: mirrors.sina.cn
+		No package mysql-server available.
+		Error: Nothing to do 
 	
 	有两种解决办法： 
 	方法一：安装mariadb 
@@ -135,10 +135,31 @@
 	systemctl restart mariadb  #重启MariaDB
 	systemctl enable mariadb  #设置开机启动
 	
-	方法二：官网下载安装mysql-server
+	先启动数据库: 
+	systemctl start mariadb 
+	然后就可以正常使用mysql了
+	mysql -u root -p
+	
+	方法二：官网下载安装mysql-server 
+	# wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+	# rpm -ivh mysql-community-release-el7-5.noarch.rpm
+	# yum install mysql-community-server
+	
+	安装成功后重启mysql服务 
+	# service mysqld restart 
+	
+	------------------------------------------------------------------------- 
+	
+	初次安装mysql，root账户没有密码， 
+	MariaDB [(none)]> set password for 'root'@'localhost' =password('要设置的密码'); 
+	Query OK, 0 rows affected (0.00 sec) 
+	不需要重启数据库即可生效
 	
 	查看Mysql安装位置
 	whereis mysql 
+	
+	查看mysql版本 
+	MariaDB [(none)]> status
 	
 	重启
 	/etc/init.d/mysql restart
