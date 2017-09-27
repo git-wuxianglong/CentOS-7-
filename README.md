@@ -108,7 +108,10 @@
 	mv file.txt /home/local
 
 	解压文件
-	tar -xvf jdk-8u111-linux-x64.tar.gz
+	tar -xvf jdk-8u111-linux-x64.tar.gz 
+	
+	搜索文件夹（搜索名为java的文件夹） 
+	find / -name java
 
 ## mysql 
 	安装
