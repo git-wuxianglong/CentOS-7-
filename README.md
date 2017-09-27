@@ -111,10 +111,34 @@
 	tar -xvf jdk-8u111-linux-x64.tar.gz
 
 ## mysql
+	yum install mysql 
+	yum install mysql-server 
+	yum install mysql-devel 
+	
+	安装mysql和mysql-devel都成功，但是安装mysql-server失败 
+	[root@yl-web yl]# yum install mysql-server
+	Loaded plugins: fastestmirror
+	Loading mirror speeds from cached hostfile
+	 * base: mirrors.sina.cn
+	 * extras: mirrors.sina.cn
+	 * updates: mirrors.sina.cn
+	No package mysql-server available.
+	Error: Nothing to do 
+	
+	有两种解决办法： 
+	方法一：安装mariadb 
+	yum install mariadb-server mariadb 
+	
+	mariadb数据库的相关命令是：
+	systemctl start mariadb  #启动MariaDB
+	systemctl stop mariadb  #停止MariaDB
+	systemctl restart mariadb  #重启MariaDB
+	systemctl enable mariadb  #设置开机启动
+	
+	方法二：官网下载安装mysql-server
+	
 	查看Mysql安装位置
 	whereis mysql 
-	
-	
 	
 	重启
 	/etc/init.d/mysql restart
